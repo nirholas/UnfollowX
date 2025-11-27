@@ -1,8 +1,5 @@
-# UnfollowX
-Unfollow everyone on X (Formerly Twitter) and or unfollow who doesn't follow you back
 
-
-## Unfollow Following Who Doesn't Follow Back on X
+![UnfollowX by nirholas](https://raw.githubusercontent.com/nirholas/UnfollowX/refs/heads/main/.github/UnfollowX.png)
 
 1. Go to `https://twitter.com/YOUR_USER_NAME/following`
 2. Open the Developer Console. (<kbd>COMMAND</kbd>+<kbd>ALT</kbd>+<kbd>I</kbd> on Mac)
@@ -155,6 +152,7 @@ This script:
 - Automates your web browser to make it click unfollow buttons, scroll down to reveal more, then do it again.
 - No tricks, all of the code is here so you can see exactly what it does.
 
-## Contributors
+# made with 🤍 by [nich](https://x.com/nichxbt)
+### Contributors
 
 - [Ethan JL](https://github.com/tahajalili) - Added feature to keep track of unfollowed users.
