@@ -761,20 +761,4 @@ PAI's promises around security, privacy, and intended use live in three document
 
 ## License
 
-PAI is free software released under the [GNU General Public License v3.0](LICENSE).
-
-You are free to use, modify, and distribute PAI. All included software retains its respective license (Debian packages are DFSG-compliant, Ollama is MIT-licensed).
-
----
-
-<p align="center">
-  <strong>Your AI. Your hardware. Your rules.</strong><br>
-  <em>No cloud. No logs. No trace.</em>
-</p>
-
-<p align="center">
-  <a href="https://github.com/nirholas/pai">GitHub</a> ·
-  <a href="https://github.com/nirholas/pai/issues">Issues</a> ·
-  <a href="https://github.com/nirholas/pai/releases">Releases</a>
-  <a href="https://x.com/nichxbt">X</a>
-</p>
+All rights reserved. See [LICENSE](LICENSE).
