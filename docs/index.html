@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PAI documentation</title>
+<meta name="description" content="Private AI on a bootable USB drive. Your secure, offline-first AI assistant — carry it anywhere, leave no trace.">
+<meta property="og:title" content="PAI documentation">
+<meta property="og:description" content="Private AI on a bootable USB drive. Your secure, offline-first AI assistant — carry it anywhere, leave no trace.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128230;</text></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#0b0d12;--panel:#12151d;--panel2:#161a24;--line:#242a38;--fg:#e7eaf3;
+ --muted:#98a1b8;--accent:#6ea8fe;--accent2:#8b7cf6;--ok:#3ddc97;--radius:14px}
+@media(prefers-color-scheme:light){:root{--bg:#f7f8fb;--panel:#fff;--panel2:#f2f4f9;
+ --line:#e3e7ef;--fg:#131722;--muted:#5b6479;--accent:#2563eb;--accent2:#7c3aed;--ok:#0f9d69}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
+ background:color-mix(in srgb,var(--bg) 86%,transparent);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.brand{font-weight:700;font-size:17px;letter-spacing:-.02em;color:var(--fg)}
+.brand span{background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.top{display:flex;gap:16px;font-size:14px;margin-left:auto;flex-wrap:wrap}
+.hero{padding:64px 0 34px}
+.eyebrow{display:inline-block;border:1px solid var(--line);background:var(--panel);
+ border-radius:999px;padding:5px 13px;font-size:12px;color:var(--muted);margin-bottom:16px}
+.hero h1{margin:0 0 14px;font-size:clamp(32px,5.2vw,52px);letter-spacing:-.035em;line-height:1.06}
+.hero .lede{margin:0;color:var(--muted);font-size:19px;max-width:66ch}
+.cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
+.btn{background:var(--accent);color:#fff;border-radius:11px;padding:11px 19px;font-weight:600;font-size:15px}
+.btn:hover{text-decoration:none;filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.install{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:12px;
+ padding:14px 16px;display:flex;align-items:center;gap:12px;max-width:640px}
+.install code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;flex:1;overflow-x:auto;white-space:nowrap}
+.copy{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:8px;
+ padding:6px 11px;font-size:12px;cursor:pointer;flex-shrink:0}
+.copy:hover{color:var(--fg);border-color:var(--accent)}
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2.sec{margin:0 0 6px;font-size:24px;letter-spacing:-.02em}
+.sub{margin:0 0 22px;color:var(--muted)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+ transition:transform .16s ease,border-color .16s ease}
+.card:hover{transform:translateY(-2px);border-color:var(--accent)}
+.card h3{margin:0 0 7px;font-size:16px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:15px;
+ overflow-x:auto;font-size:13.5px;line-height:1.6}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+:not(pre)>code{background:var(--panel2);border-radius:5px;padding:.15em .42em;font-size:.9em}
+table{border-collapse:collapse;width:100%;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+th{background:var(--panel2)}
+footer.site{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:13.5px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.badge{border:1px solid var(--line);border-radius:999px;padding:3px 11px;font-size:12px;color:var(--muted)}
+</style></head><body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./index.html">PAI <span>docs</span></a>
+  <nav class="top">
+    <a href="#start">Get started</a><a href="#examples">Examples</a>
+    <a href="./getting-started.md">Guide</a>
+    <a href="https://github.com/nirholas/PAI">GitHub</a>
+  </nav>
+</div></header>
+<div class="wrap">
+<section class="hero" style="border:0">
+  <span class="eyebrow">nirholas / PAI</span>
+  <h1>PAI</h1>
+  <p class="lede">Private AI on a bootable USB drive. Your secure, offline-first AI assistant — carry it anywhere, leave no trace.</p>
+  <div class="badges"></div>
+  <div class="cta">
+    <a class="btn" href="#start">Get started</a>
+    <a class="btn ghost" href="https://github.com/nirholas/PAI">View source</a>
+  </div>
+  <div class="install"><code>git clone https://github.com/nirholas/PAI.git</code><button class="copy" type="button">Copy</button></div>
+</section>
+
+<section id="features"><h2 class="sec">What it does</h2><p class="sub">Capabilities documented in this repository.</p><div class="grid"><div class="card"><h3>What is PAI</h3><p>See the <a href="https://github.com/nirholas/PAI#readme">full documentation</a> for details.</p></div><div class="card"><h3>A computer you can carry anywhere</h3><p>See the <a href="https://github.com/nirholas/PAI#readme">full documentation</a> for details.</p></div><div class="card"><h3>The Problem</h3><p>See the <a href="https://github.com/nirholas/PAI#readme">full documentation</a> for details.</p></div><div class="card"><h3>The Solution</h3><p>See the <a href="https://github.com/nirholas/PAI#readme">full documentation</a> for details.</p></div><div class="card"><h3>How It Works</h3><p>See the <a href="https://github.com/nirholas/PAI#readme">full documentation</a> for details.</p></div><div class="card"><h3>Architecture</h3><p>See the <a href="https://github.com/nirholas/PAI#readme">full documentation</a> for details.</p></div></div></section>
+
+<section id="start">
+  <h2 class="sec">Get started</h2>
+  <p class="sub">Install it, then run your first command.</p>
+  <pre><code>git clone https://github.com/nirholas/PAI.git</code></pre>
+  
+  <p><a href="./getting-started.md">Read the full getting started guide</a></p>
+</section>
+
+<section id="examples">
+  <h2 class="sec">Examples</h2>
+  <p class="sub">Taken directly from this repository's documentation.</p>
+  <pre><code>&gt; git clone https://github.com/nirholas/pai.git &amp;&amp; cd pai
+&gt; docker build -f Dockerfile.build -t pai-builder .
+&gt; docker run --privileged --rm -v &quot;$PWD/output:/output&quot; pai-builder
+&gt; # ISO appears at output/live-image-amd64.hybrid.iso
+&gt;</code></pre><pre><code># One-command download and flash (Linux/macOS):
+curl -fsSL https://raw.githubusercontent.com/nirholas/pai/main/scripts/flash.sh | sudo bash</code></pre><pre><code># Download the ISO
+curl -LO https://github.com/nirholas/pai/releases/latest/download/pai.iso
+
+# Flash to USB (replace /dev/sdX with your USB device)
+sudo dd if=pai.iso of=/dev/sdX bs=4M status=progress &amp;&amp; sync</code></pre>
+  <p><a href="./examples.md">More examples</a></p>
+</section>
+
+<section id="more">
+  <h2 class="sec">Reference</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/nirholas/PAI#readme"><h3>Full README</h3><p>Complete reference documentation.</p></a>
+    <a class="card" href="./getting-started.md"><h3>Getting started</h3><p>Install, configure, and run.</p></a>
+    <a class="card" href="./examples.md"><h3>Examples</h3><p>Copy-paste snippets that work.</p></a>
+    <a class="card" href="https://github.com/nirholas/PAI/issues"><h3>Issues</h3><p>Report a bug or request a feature.</p></a>
+  </div>
+</section>
+</div>
+<footer class="site"><div class="wrap">
+  <a href="https://github.com/nirholas/PAI">github.com/nirholas/PAI</a>
+  &middot; Documentation generated from this repository's own README and manifest.
+</div></footer>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+  const t=b.previousElementSibling.innerText.trim();
+  try{await navigator.clipboard.writeText(t);const o=b.innerText;b.innerText='Copied';
+      setTimeout(()=>b.innerText=o,1400);}catch(e){b.innerText='Press Ctrl+C';}
+}));
+</script></body></html>
