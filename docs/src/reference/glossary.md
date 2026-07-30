@@ -265,7 +265,7 @@ The modern firmware standard that has replaced legacy BIOS. PAI boots
 via UEFI on most modern machines.
 
 **Where it shows up in PAI:** [installation](../installation.md),
-[FAQ — install & boot](./faq.md#install--boot).
+[FAQ — install & boot](./faq.md#install-boot).
 **See also:** [ISO](#iso).
 
 ## UFW

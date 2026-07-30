@@ -100,7 +100,7 @@ Apple Silicon Macs (M1/M2/M3/M4) require the
 mode. Intel Macs usually work but sometimes need the Option key held
 at power-on and Secure Boot disabled in Startup Security.
 
-See: [troubleshooting — macOS boot](../usage/troubleshooting.md#macos-boot).
+See: [troubleshooting — won't boot](../usage/troubleshooting.md#wont-boot).
 
 ### Can I use PAI on a USB drive without wiping it?
 
@@ -218,13 +218,13 @@ Usually a GPU driver or [Wayland](./glossary.md#wayland) handoff
 issue.
 
 See: [known issues](../KNOWN_ISSUES.md),
-[troubleshooting — black screen](../usage/troubleshooting.md#black-screen).
+[troubleshooting — won't boot](../usage/troubleshooting.md#wont-boot).
 
 ### Wi-Fi doesn't work.
 
 Likely a missing non-free firmware blob for your chipset.
 
-See: [troubleshooting — wifi](../usage/troubleshooting.md#wifi).
+See: [troubleshooting — Wi-Fi](../usage/troubleshooting.md#wi-fi-doesnt-work).
 
 ### Ollama is really slow.
 
@@ -236,7 +236,7 @@ a GPU.
 
 Double-check the passphrase (case-sensitive, keyboard layout
 matters). If still failing, see
-[troubleshooting — persistence](../usage/troubleshooting.md#persistence).
+[troubleshooting — persistence](../usage/troubleshooting.md#persistence-issues).
 
 ---
 

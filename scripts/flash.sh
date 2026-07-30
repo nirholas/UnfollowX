@@ -200,6 +200,20 @@ verify_sha256() {
     return 1
 }
 
+# Check that the release host is reachable before attempting a multi-GB
+# download, so a dead host fails with an actionable message instead of a
+# cryptic curl/wget error. Tries a HEAD request first, then a 1-byte
+# ranged GET for hosts that reject HEAD.
+check_release_host() {
+    if command -v curl &>/dev/null; then
+        curl -fsIL --max-time 20 -o /dev/null "$RELEASE_URL" 2>/dev/null && return 0
+        curl -fsL --max-time 20 -r 0-0 -o /dev/null "$RELEASE_URL" 2>/dev/null && return 0
+    elif command -v wget &>/dev/null; then
+        wget -q --spider --timeout=20 "$RELEASE_URL" 2>/dev/null && return 0
+    fi
+    return 1
+}
+
 # Fetch expected SHA256 from the latest GitHub release's SHA256SUMS asset
 # when the caller did not pass --sha256. Writes the hash to stdout.
 fetch_expected_sha256() {
@@ -247,6 +261,22 @@ if [[ -n "$LOCAL_ISO" ]]; then
 else
     info "\nDownloading PAI ISO..."
     info "Source: $RELEASE_URL"
+
+    if ! check_release_host; then
+        echo "" >&2
+        warn "Cannot reach the release host: $RELEASE_URL"
+        warn "Hosted downloads may be temporarily offline (the pai.direct site is moving hosts)."
+        echo "" >&2
+        echo "You can still flash PAI:" >&2
+        echo "  1. Build the ISO from source (see 'Build from Source' in the README):" >&2
+        echo "       git clone https://github.com/nirholas/pai.git && cd pai" >&2
+        echo "       docker build -f Dockerfile.build -t pai-builder ." >&2
+        echo "       docker run --privileged --rm -v \"\$PWD/output:/output\" pai-builder" >&2
+        echo "  2. Re-run this script pointing at the built (or otherwise obtained) ISO:" >&2
+        echo "       sudo bash flash.sh --local-iso output/live-image-amd64.hybrid.iso" >&2
+        echo "" >&2
+        die "Release host unreachable. Use --local-iso with a locally built ISO, or retry once hosting is restored."
+    fi
 
     TMP_ISO=$(mktemp -t pai-iso.XXXXXX) || die "Failed to create temp file"
     if command -v curl &>/dev/null; then

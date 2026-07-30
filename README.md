@@ -41,6 +41,17 @@
 
 ## Quick Start
 
+> **Hosted downloads are temporarily offline** while the site moves hosts (`pai.direct` and `get.pai.direct` do not currently resolve). Until rehosting completes, **[building from source](#build-from-source)** with `Dockerfile.build` is the primary path:
+>
+> ```bash
+> git clone https://github.com/nirholas/pai.git && cd pai
+> docker build -f Dockerfile.build -t pai-builder .
+> docker run --privileged --rm -v "$PWD/output:/output" pai-builder
+> # ISO appears at output/live-image-amd64.hybrid.iso
+> ```
+>
+> Then flash it with the auto-flasher: `sudo bash scripts/flash.sh --local-iso output/live-image-amd64.hybrid.iso`. The download commands below are kept for reference and will work again once hosting is restored.
+
 ```bash
 # One-command download and flash (Linux/macOS):
 curl -fsSL https://raw.githubusercontent.com/nirholas/pai/main/scripts/flash.sh | sudo bash
@@ -359,6 +370,8 @@ qemu-system-x86_64 \
 
 ## Flash to USB
 
+> **Note:** the hosted ISO downloads used by the methods below are temporarily offline while the site moves hosts. [Build from source](#build-from-source) first, then use Method 1 with `--local-iso` (or Methods 2-4 with your locally built ISO). The download URLs will work again once rehosting completes.
+
 ### Requirements
 
 - **USB drive**: 2 GB minimum (8 GB+ recommended for downloading models)
@@ -622,7 +635,7 @@ ollama run llama3.1 "Explain quantum computing in simple terms"
 - [ ] **Persistent encrypted storage** — opt-in LUKS partition on USB for saving models and chat history across sessions
 - [ ] **GPU passthrough** — detect and use discrete GPU for faster inference when available
 - [ ] **Model pre-bundling** — include a small model (e.g., Phi-3 Mini) in the ISO for instant offline use
-- [x] **Landing page** — `pai.direct` with OS detection and one-click flash instructions
+- [ ] **Landing page** — `pai.direct` with OS detection and one-click flash instructions (built, but temporarily offline while the site moves hosts)
 - [ ] **GitHub Actions CI** — automated ISO builds on every tagged release
 - [ ] **Secure Boot support** — signed bootloader for machines with Secure Boot enabled
 - [ ] **ARM64 build** — Raspberry Pi and Apple Silicon support

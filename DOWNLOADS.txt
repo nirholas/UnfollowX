@@ -1,6 +1,13 @@
 PAI 0.1.0 — ISO download instructions
 ======================================
 
+STATUS (2026-07-30): hosted downloads are temporarily offline while the
+site moves hosts (get.pai.direct DNS does not currently resolve). The
+URLs below are kept for reference and will work again once rehosting
+completes. Until then, build the ISO from source: see "Build from
+Source" in README.md (build.sh, or Dockerfile.build for the
+containerized build).
+
 ISOs are too large (~8-9 GB) to attach directly to a GitHub release.
 They are hosted on Cloudflare at get.pai.direct.
 

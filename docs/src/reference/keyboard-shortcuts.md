@@ -59,7 +59,7 @@ The modifier key throughout is **Alt** (set as `Mod1` in the Sway config at `/et
 
     Shortcuts in the second half of the table depend on which profile PAI booted
     into. The default is `full`, which enables all of them. See
-    [Boot Options](../advanced/boot-options.md#pai-profile-options) for how to
+    [Boot Options](../advanced/boot-options.md#full-kernel-option-reference) for how to
     choose a different profile.
 
 
